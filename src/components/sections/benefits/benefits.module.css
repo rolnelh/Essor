@@ -1,0 +1,76 @@
+.section {
+  font-family: 'Poppins', Arial, sans-serif;
+  padding: 132px 0 108px;
+  background: #f7f8fa;
+}
+.container { max-width: 1248px; padding-inline: 28px; margin-inline: auto; }
+.header { margin: 0 7% 42px; display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; }
+.title { font-size: clamp(30px, 3.4vw, 49px); font-weight: 600; letter-spacing: -.055em; line-height: 1.12; color: #10151d; text-wrap: balance; }
+.subtitle { margin-top: 14px; color: #636b79; font-size: clamp(15px, 1.42vw, 20px); line-height: 1.5; }
+.arrows { display: flex; gap: 20px; flex-shrink: 0; padding-top: 3px; }
+.arrow { width: 60px; height: 60px; display: grid; place-items: center; border-radius: 50%; border: 1px solid #d1d5dd; background: #fff; color: #6b7480; transition: background .18s, transform .18s; cursor: pointer; }
+.next { border-color: transparent; color: #fff; background: linear-gradient(135deg, #ff918c, #ff7877); }
+.arrow:disabled { cursor: default; }
+.next:disabled { opacity: .45; }
+.arrow:not(:disabled):hover { transform: translateY(-2px); background: #e9edf2; }
+.next:not(:disabled):hover { background: #ef726c; }
+.shelf { background: #fff; border-radius: 26px; padding: 28px 7%; }
+.track { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+.track::-webkit-scrollbar { display: none; }
+.track:focus-visible { outline-offset: 8px; }
+.card { flex: 0 0 calc((100% - 48px) / 3); min-width: 0; display: flex; flex-direction: column; padding: 6px; border-radius: 26px; background: var(--tile); scroll-snap-align: start; }
+.peach { --tile: #fff0e6; --disc: #ffc4be; }
+.lavender { --tile: #f0efff; --disc: #b7c5ff; }
+.blue { --tile: #e6faff; --disc: #a9e7f8; }
+.art { aspect-ratio: 1.31; display: grid; place-items: center; }
+.disc { display: grid; place-items: center; position: relative; width: 64%; aspect-ratio: 1; border-radius: 50%; background: var(--disc); }
+.sprite { position: absolute; inset: -9%; background-image: url('/images/benefits-icons.webp'); background-size: 300% 200%; background-repeat: no-repeat; }
+.copy { background: #fff; border-radius: 22px; padding: 30px 24px; flex: 1; min-height: 176px; }
+.copy h3 { font-weight: 600; font-size: clamp(19px, 1.8vw, 25px); letter-spacing: -.045em; line-height: 1.25; color: #10151d; }
+.copy p { margin-top: 16px; color: #626976; font-size: clamp(15px, 1.32vw, 18px); line-height: 1.55; }
+.pagination { display: flex; justify-content: center; gap: 0; margin-top: 18px; }
+.dot { display: grid; place-items: center; width: 40px; height: 44px; cursor: pointer; }
+.dot span { width: 13px; height: 13px; border-radius: 50%; background: #dfe3e9; transition: background .2s; }
+.dot[aria-current='true'] span { background: #ff8580; }
+@media (max-width: 1050px) {
+  .section { padding-block: 90px; }
+  .container { padding-inline: 24px; }
+  .header { margin-inline: 3%; }
+  .shelf { padding: 24px 3%; }
+  .track { gap: 18px; }
+  .card { flex-basis: calc((100% - 36px) / 3); border-radius: 22px; }
+  .copy { padding: 23px 17px; min-height: 167px; border-radius: 18px; }
+  .copy h3 { font-size: 20px; }
+  .copy p { font-size: 15px; margin-top: 12px; }
+  .arrow { width: 50px; height: 50px; }
+  .arrows { gap: 12px; }
+}
+@media (max-width: 767px) {
+  .section { padding-block: 64px; }
+  .container { padding-inline: 20px; }
+  .header { margin: 0 0 28px; align-items: flex-end; gap: 16px; }
+  .title { font-size: 32px; }
+  .subtitle { font-size: 15px; margin-top: 12px; }
+  .arrow { width: 44px; height: 44px; }
+  .arrows { gap: 8px; }
+  .shelf { padding: 18px; border-radius: 22px; }
+  .track { gap: 18px; }
+  .card { flex-basis: calc((100% - 18px) / 2); }
+  .copy { padding: 22px 17px; }
+  .copy h3 { font-size: 20px; }
+  .copy p { font-size: 15px; }
+  .dot span { width: 10px; height: 10px; }
+}
+@media (max-width: 520px) {
+  .header { flex-wrap: wrap; }
+  .header>div:first-child { flex: 1 1 230px; }
+  .arrows { margin-left: auto; }
+  .card { flex-basis: 100%; }
+  .shelf { padding: 22px; }
+  .art { max-height: 230px; }
+  .disc { max-width: 190px; }
+  .copy { padding: 25px; min-height: 153px; }
+  .copy h3 { font-size: 24px; }
+  .copy p { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { .arrow, .dot span { transition: none; } }

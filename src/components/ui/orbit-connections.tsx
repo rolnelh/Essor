@@ -1,0 +1,4 @@
+/** Decorative connectors between the central portrait and the ideas. */
+export function OrbitConnections() {
+  return <svg className="orbit-connections" viewBox="0 0 1144 520" preserveAspectRatio="none" fill="none" aria-hidden="true"><g strokeWidth="1"><path d="M270 85 C370 85 335 165 440 165" stroke="#9ac6ff"/><path d="M290 260 C365 260 375 330 440 280" stroke="#f7aa99"/><path d="M275 430 C365 430 350 350 445 350" stroke="#9ac6ff"/><path d="M860 85 C775 85 800 170 705 170" stroke="#f7aa99"/><path d="M870 260 C785 260 780 310 705 290" stroke="#9ac6ff"/><path d="M860 430 C775 430 790 365 705 350" stroke="#f7aa99"/></g><g fill="#f48b75"><circle cx="290" cy="260" r="4"/><circle cx="860" cy="85" r="4"/><circle cx="860" cy="430" r="4"/></g><g fill="#8bbaff"><circle cx="270" cy="85" r="4"/><circle cx="275" cy="430" r="4"/><circle cx="870" cy="260" r="4"/></g></svg>;
+}
